@@ -22,4 +22,11 @@ class MyThread extends Thread
             System.out.println("Child Thread");
         }
     }
+
+    /*public void start()
+    {
+        super();
+        System.out.println("Start Method");
+    }
+    *//*Never override Start() as it will be implemented as normal method*/
 }
