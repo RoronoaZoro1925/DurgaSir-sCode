@@ -6,6 +6,7 @@ public class RunnableMethod
     {
         MyRunnable r = new MyRunnable();
         Thread t = new Thread(r);
+        Thread t1 = new Thread();
         t.start();
         for (int i = 0; i < 5; i++)
         {
