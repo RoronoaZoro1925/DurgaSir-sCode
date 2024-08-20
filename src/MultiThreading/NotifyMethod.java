@@ -1,6 +1,6 @@
 package MultiThreading;
 
-public class WaitMethod
+public class NotifyMethod
 {
     public static void main(String[] args) throws InterruptedException {
         ThreadA a = new ThreadA();
@@ -9,6 +9,7 @@ public class WaitMethod
         {
             System.out.println("Main thread trying to call wait() method");
             a.wait();
+
             System.out.println("Main thread got notification");
             System.out.println(a.total);
         }
@@ -26,10 +27,15 @@ class ThreadA extends Thread
             System.out.println("Child Thread to start code");
             for (int i = 0; i <10 ; i++)
             {
-                total=total++;
+                total=total+i;
+            }
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
             System.out.println("Child Thread trying to give notification");
-            this.notify();
+//            this.notify();
         }
 
     }
