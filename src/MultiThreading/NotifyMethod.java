@@ -5,6 +5,9 @@ public class NotifyMethod
     public static void main(String[] args) throws InterruptedException {
         ThreadA a = new ThreadA();
         a.start();
+        Integer x=128;
+        Integer y = 128;
+        System.out.println(x==y);
         synchronized (a)
         {
             System.out.println("Main thread trying to call wait() method");
